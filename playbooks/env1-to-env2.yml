@@ -4,26 +4,26 @@
   gather_facts: false
 
   tasks:
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Env 2 is starting..."
+    - name: Start Env2
+      ansible.builtin.include_role:
+        name: up
+      vars:
+        up_env: Env2
 
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Env 2 is up! :)"
+    - name: Check Env2
+      ansible.builtin.include_role:
+        name: check
+      vars:
+        check_env: Env2
 
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Testing all the things..."
+    - name: Activate Env2
+      ansible.builtin.include_role:
+        name: activate
+      vars:
+        activate_env: Env2
 
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Dns has been changed!"
-
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Env 1 is stopping..."
-
-    - name: Print Message
-      ansible.builtin.debug:
-        msg: "Env 1 is down! :("
+    - name: Down Env1
+      ansible.builtin.include_role:
+        name: down
+      vars:
+        down_env: Env1
