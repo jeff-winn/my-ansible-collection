@@ -1,0 +1,9 @@
+---
+- name: Up
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Print Message
+      debug:
+        msg: "We're up! :)"
