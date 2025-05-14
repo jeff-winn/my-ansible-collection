@@ -5,5 +5,5 @@
 
   tasks:
     - name: Print Message
-      debug:
+      ansible.builtin.debug:
         msg: "We're down! :("
