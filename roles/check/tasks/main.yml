@@ -1,4 +1,4 @@
 ---
 - name: Print Message
   ansible.builtin.debug:
-    msg: "Testing all the things..."
+    msg: "{{ check_env }} is testing all the things..."

@@ -1,8 +1,8 @@
 ---
 - name: Print Message
   ansible.builtin.debug:
-    msg: "Env 2 is starting..."
+    msg: "{{ up_env }} is starting..."
 
 - name: Print Message
   ansible.builtin.debug:
-    msg: "Env 2 is up! :)"
+    msg: "{{ up_env }} is up! :)"

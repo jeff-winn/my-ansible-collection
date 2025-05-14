@@ -1,8 +1,8 @@
 ---
 - name: Print Message
   ansible.builtin.debug:
-    msg: "Env 1 is stopping..."
+    msg: "{{ down_env }} is stopping..."
 
 - name: Print Message
   ansible.builtin.debug:
-    msg: "Env 1 is down! :("
+    msg: "{{ down_env }} is down! :("
