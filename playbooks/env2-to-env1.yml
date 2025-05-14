@@ -8,22 +8,22 @@
       ansible.builtin.include_role:
         name: up
       vars:
-        up_env: Env1
+        up_env: env1
 
     - name: Check Env1
       ansible.builtin.include_role:
         name: check
       vars:
-        check_env: Env1
+        check_env: env1
 
     - name: Activate Env1
       ansible.builtin.include_role:
         name: activate
       vars:
-        activate_env: Env1
+        activate_env: env1
 
     - name: Down Env2
       ansible.builtin.include_role:
         name: down
       vars:
-        down_env: Env2
+        down_env: env2

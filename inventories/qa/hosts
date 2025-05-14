@@ -1,0 +1,19 @@
+qa1:
+  database: 
+    host: mydb1.somewhere.net
+
+  openshift:
+    namespace: myapp-prod
+    deployments:
+      - app1
+      - app2
+  
+qa2:
+  database: 
+    host: mydb2.somewhere.net
+
+  openshift:
+    namespace: myapp-prod
+    deployments:
+      - app1
+      - app2
