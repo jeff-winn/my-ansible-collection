@@ -1,0 +1,4 @@
+---
+- name: Print Message
+  ansible.builtin.debug:
+    msg: "Env has been activated!!!"
