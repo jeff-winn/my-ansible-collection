@@ -16,10 +16,6 @@
       vars:
         check_env: env2
 
-    - name: Test Env2
-      ansible.builtin.pause:
-        prompt: Proceed with testing env2
-
     - name: Activate Env2
       ansible.builtin.include_role:
         name: activate
