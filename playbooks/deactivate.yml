@@ -1,3 +1,6 @@
+# File: deactivate.yml
+# Purpose: This file would be used to bring an environment down to a cool state.
+# Optional: Yes
 ---
 - name: Deactivate
   hosts: localhost

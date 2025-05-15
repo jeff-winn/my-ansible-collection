@@ -1,3 +1,6 @@
+# File: activate.yml
+# Purpose: This file would be used to activate the new environment such that it becomes the live environment.
+# Optional: No
 ---
 - name: Activate
   hosts: localhost

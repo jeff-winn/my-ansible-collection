@@ -1,3 +1,7 @@
+# File: check.yml
+# Purpose: This file would be used to check the new environment for any automated testing which
+#          could be used to verify environment availability.
+# Optional: No
 ---
 - name: Check
   hosts: localhost

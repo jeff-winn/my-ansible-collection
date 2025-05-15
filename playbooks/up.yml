@@ -1,13 +1,16 @@
+# File: up.yml
+# Purpose: This file would be used to bring an environment up into a warm state.
+# Optional: No
 ---
-- name: Down
+- name: Up
   hosts: localhost
   gather_facts: false
 
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is stopping..."
+        msg: "Environment is starting..."
 
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is down! :("
+        msg: "Environment is up! :)"

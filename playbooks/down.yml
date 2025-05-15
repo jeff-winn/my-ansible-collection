@@ -1,3 +1,6 @@
+# File: down.yml
+# Purpose: This file would be used to bring an environment down to a cold state.
+# Optional: No
 ---
 - name: Down
   hosts: localhost
