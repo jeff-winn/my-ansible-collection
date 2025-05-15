@@ -1,41 +1,43 @@
-databases:
-  mongodb:
-    listener: mymongo1.somewhere.net
-  mssql: 
-    listener: mydb1.somewhere.net
-  oracle:
-    listener: myoracle1.somewhere.net
+all:
+  children:
+    databases:
+      mongodb:
+        - listener: mymongo1.somewhere.net
+      mssql: 
+        - listener: mydb1.somewhere.net
+      oracle:
+        - listener: myoracle1.somewhere.net
 
-dns:
-  - alias: myapp.somewhere.net
-    target: myapp1.somewhere.net
-    purpose: AppUrl
-  - alias: myservice.somewhere.net
-    target: myservice1.somewhere.net
-    purpose: AppUrl
+    dns:
+      - alias: myapp.somewhere.net
+        target: myapp1.somewhere.net
+        purpose: AppUrl
+      - alias: myservice.somewhere.net
+        target: myservice1.somewhere.net
+        purpose: AppUrl
 
-nas:
-  # This could have some funny mapping on it.
-  host: mynas1.somewhere.net
+    nas:
+      # This could have some funny mapping on it.
+      host: mynas1.somewhere.net
 
-servers:
-  apache:
-    - name: app
-      instance: myappww
-      hosts:
-        - server1a
-        - server1b
+    servers:
+      apache:
+        - name: app
+          instance: myappww
+          hosts:
+            - server1a
+            - server1b
 
-  websphere:
-    - cluster_name: myapp
-      host: mywebsphere1.somewhere.net
+      websphere:
+        - name: myapp
+          host: mywebsphere1.somewhere.net
 
-openshift:
-  namespace: myapp-prod
+    openshift:
+      namespace: myapp-prod
 
-  # First one to start, stop order needs to be reversed.
-  deployments:
-    - app1a
-    - app1a-router
-    - app1a-background
-    - app1b
+      # First one to start, stop order needs to be reversed.
+      deployments:
+        - app1a
+        - app1a-router
+        - app1a-background
+        - app1b
