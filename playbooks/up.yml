@@ -6,8 +6,8 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "{{ up_env }} is stopping..."
+        msg: "Environment is stopping..."
 
     - name: Print Message
       ansible.builtin.debug:
-        msg: "{{ up_env }} is down! :("
+        msg: "Environment is down! :("

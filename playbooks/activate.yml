@@ -6,4 +6,4 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "{{ activate_env }} has been activated!!!"
+        msg: "Environment has been activated!!!"

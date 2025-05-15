@@ -6,4 +6,4 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "{{ check_env }} is testing all the things..."
+        msg: "Environment is testing all the things..."
