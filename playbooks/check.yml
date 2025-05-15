@@ -1,0 +1,9 @@
+---
+- name: Check
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Print Message
+      ansible.builtin.debug:
+        msg: "{{ check_env }} is testing all the things..."
