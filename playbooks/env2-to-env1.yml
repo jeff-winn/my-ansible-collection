@@ -16,6 +16,10 @@
       vars:
         check_env: env1
 
+    - name: Test Env1
+      ansible.builtin.pause:
+        prompt: Proceed with testing env1
+
     - name: Activate Env1
       ansible.builtin.include_role:
         name: activate
