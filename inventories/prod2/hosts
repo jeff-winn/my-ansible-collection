@@ -1,43 +1,49 @@
-all:
+---
+databases:
   children:
-    databases:
-      mongodb:
-        - listener: mymongo2.somewhere.net
-      mssql: 
-        - listener: mydb2.somewhere.net
-      oracle:
-        - listener: myoracle2.somewhere.net
+    oracle:
+      vars:
+        listener: mylistener.somewhere.net
+      hosts:
+        myoracle2.somewhere.net:
 
-    dns:
-      - alias: myapp.somewhere.net
-        target: myapp2.somewhere.net
+    mssql:
+      vars:
+        listener: mylistener.somewhere.net
+      hosts:
+        mssql2.somewhere.net:
+
+dns:
+  children:
+    myapp.somewhere.net:
+      vars:
         purpose: AppUrl
-      - alias: myservice.somewhere.net
-        target: myservice2.somewhere.net
+      hosts:
+        myapp2.somewhere.net
+    myservice.somewhere.net:
+      vars:
         purpose: AppUrl
+      hosts:
+        myservice2.somewhere.net
 
-    nas:
-      # This could have some funny mapping on it.
-      host: mynas2.somewhere.net
+apache:
+  vars:
+    instance: myappww
+  hosts:
+    server2a.somewhere.net:
+    serverba.somewhere.net:
 
-    servers:
-      apache:
-        - name: app
-          instance: myappww
-          hosts:
-            - server2a
-            - server2b
+websphere:
+  vars:
+    instance: myapp
+  hosts:
+    mywebsphere2.somewhere.net:
 
-      websphere:
-        - name: myapp
-          host: mywebsphere2.somewhere.net
-
-    openshift:
-      namespace: myapp-prod
-
-      # First one to start, stop order needs to be reversed.
-      deployments:
-        - app2a
-        - app2a-router
-        - app2a-background
-        - app2b
+openshift:
+  vars:
+    namespace: myapp-prod
+  hosts:
+    app2a:
+    app2a-router:
+    app2a-background:
+    app2b:
