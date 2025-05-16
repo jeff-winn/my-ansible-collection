@@ -19,19 +19,17 @@ all:
       hosts:
         myapp-01:
           record: myapp.somewhere.net
-          purpose: AppUrl
-          target: myapp-prod2.somewhere.net
+          host_name: myapp-prod2.somewhere.net
         myservice-01:
           record: myservice.somewhere.net
-          purpose: AppUrl
-          target: myservice-prod2.somewhere.net
+          host_name: myservice-prod2.somewhere.net
 
     apache:
       vars:
         instance: myappww
       hosts:
-        apache-01a.somewhere.net:
-        apache-0ba.somewhere.net:
+        apache-02a.somewhere.net:
+        apache-02b.somewhere.net:
 
     websphere:
       vars:
