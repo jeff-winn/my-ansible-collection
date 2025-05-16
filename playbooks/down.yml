@@ -13,10 +13,12 @@
 
 - name: Oracle
   hosts: oracle
+  gather_facts: false
+
   roles:
     - role: oracle_down
       vars:
-        database_name: "{{ item }}"
+        database_name: "{{ inventory_hostname }}"
         listener: "{{ listener }}"
         dns_name: "{{ dns_name }}"
 
