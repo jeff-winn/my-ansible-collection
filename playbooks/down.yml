@@ -2,7 +2,7 @@
 # Purpose: This file would be used to bring an environment down to a cold state.
 # Optional: No
 ---
-- name: Down
+- name: Notify starting to shutdown
   hosts: localhost
   gather_facts: false
 
@@ -11,6 +11,20 @@
       ansible.builtin.debug:
         msg: "Environment is stopping..."
 
+- name: Oracle
+  hosts: oracle
+  roles:
+    - role: oracle_down
+      vars:
+        database_name: "{{ item }}"
+        listener: "{{ listener }}"
+        dns_name: "{{ dns_name }}"
+
+- name: Cleanup
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
     - name: Print Message
       ansible.builtin.debug:
         msg: "Environment is down! :("
