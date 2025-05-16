@@ -17,10 +17,6 @@
 
   roles:
     - role: oracle_down
-      vars:
-        database_name: "{{ item }}"
-        listener: "{{ listener }}"
-        dns_name: "{{ dns_name }}"
 
 - name: Cleanup
   hosts: localhost
