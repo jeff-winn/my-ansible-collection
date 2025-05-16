@@ -5,22 +5,22 @@ all:
   children:
     oracle:
       hosts:
-        oracle-01:
+        oracle-02:
           listener: mylistener.somewhere.net
           dns_name: myoracle2.somewhere.net
 
     mssql:
       hosts:
-        mssql-01:
+        mssql-02:
           listener: mylistener.somewhere.net
           dns_name: mssql2.somewhere.net
 
     dns:
       hosts:
-        myapp-01:
+        myapp-02:
           record: myapp.somewhere.net
           host_name: myapp-prod2.somewhere.net
-        myservice-01:
+        myservice-02:
           record: myservice.somewhere.net
           host_name: myservice-prod2.somewhere.net
 
