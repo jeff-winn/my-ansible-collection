@@ -1,49 +1,38 @@
 ---
-databases:
+all:
+  vars:
+    environment_name: Prod1
   children:
     oracle:
-      vars:
-        listener: mylistener.somewhere.net
       hosts:
-        myoracle2.somewhere.net:
+        oracle-01:
+          listener: mylistener.somewhere.net
+          dns_name: myoracle1.somewhere.net
 
     mssql:
-      vars:
-        listener: mylistener.somewhere.net
       hosts:
-        mssql2.somewhere.net:
-        
-dns:
-  children:
-    myapp.somewhere.net:
-      vars:
-        purpose: AppUrl
+        mssql-01:
+          listener: mylistener.somewhere.net
+          dns_name: mssql1.somewhere.net
+
+    dns:
       hosts:
-        myapp2.somewhere.net
-    myservice.somewhere.net:
+        myapp-01:
+          record: myapp.somewhere.net
+          host_name: myapp-prod1.somewhere.net
+        myservice-01:
+          record: myservice.somewhere.net
+          host_name: myservice-prod1.somewhere.net
+
+    apache:
       vars:
-        purpose: AppUrl
+        instance: myappww
       hosts:
-        myservice2.somewhere.net
+        apache-02a.somewhere.net:
+        apache-02b.somewhere.net:
 
-apache:
-  vars:
-    instance: myappww
-  hosts:
-    server2a.somewhere.net:
-    serverba.somewhere.net:
-
-websphere:
-  vars:
-    instance: myapp
-  hosts:
-    mywebsphere2.somewhere.net:
-
-openshift:
-  vars:
-    namespace: myapp-prod
-  hosts:
-    app2a:
-    app2a-router:
-    app2a-background:
-    app2b:
+    websphere:
+      vars:
+        instance: myapp
+      hosts:
+        mywebsphere2.somewhere.net:

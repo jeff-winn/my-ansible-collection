@@ -5,13 +5,13 @@ all:
   children:
     oracle:
       hosts:
-        oracle-02:
+        oracle-01:
           listener: mylistener.somewhere.net
           dns_name: myoracle2.somewhere.net
 
     mssql:
       hosts:
-        mssql-02:
+        mssql-01:
           listener: mylistener.somewhere.net
           dns_name: mssql2.somewhere.net
 
