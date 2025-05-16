@@ -9,7 +9,7 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is stopping..."
+        msg: "{{ environment_name }} is stopping..."
 
 - name: Stop Oracle
   hosts: oracle
@@ -24,4 +24,4 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is down! :("
+        msg: "{{ environment_name }} is down! :("

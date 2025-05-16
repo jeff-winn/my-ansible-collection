@@ -9,7 +9,7 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is starting..."
+        msg: "{{ environment_name }} is starting..."
 
 - name: Start Oracle
   hosts: oracle
@@ -24,4 +24,4 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment is up! :)"
+        msg: "{{ environment_name }} is up! :)"
