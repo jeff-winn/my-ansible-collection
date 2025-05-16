@@ -1,0 +1,7 @@
+- name: Prepare
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} is preparing to start..."
+
+- name: Completed
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} is up! :)"

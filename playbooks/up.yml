@@ -11,6 +11,17 @@
       ansible.builtin.debug:
         msg: "Environment is starting..."
 
+- name: Start Oracle
+  hosts: oracle
+  gather_facts: false
+  roles:
+    - role: oracle_up
+
+- name: Cleanup
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
     - name: Print Message
       ansible.builtin.debug:
         msg: "Environment is up! :)"
