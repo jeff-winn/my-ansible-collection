@@ -8,3 +8,4 @@
 
 **Notable Changes:**
 - The `ansible.cfg` file does contain the `roles_path` setting to ensure the roles stays at the root of the collection, and is not relative to the playbooks.
+- When using inventory sources which are sourced from a project, ensure the Update on Launch checkbox has been ticked, otherwise changes to the hosts will not be reflected.
