@@ -18,7 +18,7 @@
   roles:
     - role: oracle_down
       vars:
-        database_name: "{{ inventory_hostname }}"
+        database_name: "{{ item }}"
         listener: "{{ listener }}"
         dns_name: "{{ dns_name }}"
 
