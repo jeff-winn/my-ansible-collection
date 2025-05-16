@@ -2,11 +2,18 @@
 # Purpose: This file would be used to activate the new environment such that it becomes the live environment.
 # Optional: No
 ---
-- name: Activate
+- name: Swap DNS
+  hosts: dns
+  gather_facts: false
+
+  roles:
+    - role: dns_flip
+
+- name: Completed
   hosts: localhost
   gather_facts: false
 
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment has been activated!!!"
+        msg: "{{ environment_name }} has been activated!"

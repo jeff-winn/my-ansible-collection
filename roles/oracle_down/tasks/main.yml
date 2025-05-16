@@ -1,7 +1,3 @@
-- name: Prepare
-  ansible.builtin.debug:
-    msg: "{{ inventory_hostname }} is preparing to shutdown..."
-
-- name: Completed
+- name: Shutdown
   ansible.builtin.debug:
     msg: "{{ inventory_hostname }} is down! :("

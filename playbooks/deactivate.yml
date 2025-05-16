@@ -9,4 +9,4 @@
   tasks:
     - name: Print Message
       ansible.builtin.debug:
-        msg: "Environment has been deactivated!!!"
+        msg: "{{ environment_name }} has been deactivated!!!"

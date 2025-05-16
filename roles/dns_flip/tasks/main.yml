@@ -1,0 +1,3 @@
+- name: Perform DNS Change
+  ansible.builtin.debug:
+    msg: "{{ record }} has been changed to {{ host_name }}"

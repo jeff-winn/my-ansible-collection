@@ -2,7 +2,7 @@
 # Purpose: This file would be used to bring an environment down to a cold state.
 # Optional: No
 ---
-- name: Notify starting to shutdown
+- name: Prepare
   hosts: localhost
   gather_facts: false
 
