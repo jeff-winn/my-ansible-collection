@@ -28,11 +28,11 @@ all:
       vars:
         instance: myappww
       hosts:
-        apache-02a.somewhere.net:
-        apache-02b.somewhere.net:
+        apache-01a.somewhere.net:
+        apache-01b.somewhere.net:
 
     websphere:
       vars:
         instance: myapp
       hosts:
-        mywebsphere2.somewhere.net:
+        mywebsphere1.somewhere.net:
