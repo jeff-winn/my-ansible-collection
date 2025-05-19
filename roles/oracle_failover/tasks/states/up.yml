@@ -1,0 +1,3 @@
+- name: Start
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} is up! :)"

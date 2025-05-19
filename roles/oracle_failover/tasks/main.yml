@@ -1,9 +1,8 @@
-- name: Stop
-  ansible.builtin.debug:
-    msg: "{{ inventory_hostname }} is down! :("
+- name: "{{ inventory_hostname }} Stopping..."
+  ansible.builtin.include_tasks: states/down.yml
   when: state == "down"
-
-- name: Start
-  ansible.builtin.debug:
-    msg: "{{ inventory_hostname }} is up! :)"
+  
+- name: "{{ inventory_hostname }} Starting..."
+  ansible.builtin.include_tasks: states/up.yml
   when: state == "up"
+  
