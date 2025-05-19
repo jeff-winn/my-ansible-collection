@@ -1,8 +1,8 @@
-- name: "{{ inventory_hostname }} Stopping..."
+- name: "Stop {{ inventory_hostname }}"
   ansible.builtin.include_tasks: states/down.yml
   when: state == "down"
   
-- name: "{{ inventory_hostname }} Starting..."
+- name: "Start {{ inventory_hostname }}"
   ansible.builtin.include_tasks: states/up.yml
   when: state == "up"
   
