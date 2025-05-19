@@ -11,7 +11,7 @@
       ansible.builtin.debug:
         msg: "{{ environment_name }} is stopping..."
 
-- name: Stop Oracle
+- name: Oracle
   hosts: oracle
   gather_facts: false
   roles:
