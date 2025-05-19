@@ -1,0 +1,9 @@
+- name: Start
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} is down! :("
+  when: state == "down"
+
+- name: Start
+  ansible.builtin.debug:
+    msg: "{{ inventory_hostname }} is up! :)"
+  when: state == "up"

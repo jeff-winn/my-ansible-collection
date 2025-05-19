@@ -15,7 +15,8 @@
   hosts: oracle
   gather_facts: false
   roles:
-    - role: oracle_up
+    - role: oracle_failover
+      state: up
 
 - name: Cleanup
   hosts: localhost
