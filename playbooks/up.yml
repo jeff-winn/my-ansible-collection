@@ -11,6 +11,17 @@
       ansible.builtin.debug:
         msg: "{{ environment_name }} is starting..."
 
+- name: Break it
+  hosts: oracle
+  gather_facts: false
+  
+  tasks:
+    - name: Get the data
+      ansible.builtin.uri:
+        url: https://mynonexistantdomain.com:8080/api/my-Get
+        method: Get
+        return_content: true
+        
 - name: Oracle
   hosts: oracle
   gather_facts: false
