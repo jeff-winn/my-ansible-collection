@@ -19,6 +19,6 @@
         msg: "{{ environment_name }} has been activated!"
 
 
-    - name: Print Oracle username
+    - name: Print super secret password
       ansible.builtin.debug:
-        msg: "{{ oracle_cyberark_username }} has been used!"
+        msg: "{{ password }} has been used!"
