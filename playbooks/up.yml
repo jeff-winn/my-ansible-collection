@@ -2,8 +2,8 @@
 # Purpose: This file would be used to bring an environment up into a warm state.
 # Optional: No
 ---
-- name: Prepare
-  hosts: localhost
+- name: Up
+  hosts: all
   gather_facts: false
 
   tasks:

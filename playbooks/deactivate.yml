@@ -3,7 +3,7 @@
 # Optional: Yes
 ---
 - name: Deactivate
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   tasks:

@@ -2,15 +2,15 @@
 # Purpose: This file would be used to activate the new environment such that it becomes the live environment.
 # Optional: No
 ---
-- name: Swap DNS
-  hosts: dns
+- name: Activate
+  hosts: all
   gather_facts: false
 
   roles:
     - role: dns_flip
 
 - name: Completed
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   tasks:

@@ -4,7 +4,7 @@
 # Optional: No
 ---
 - name: Check
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   tasks:
