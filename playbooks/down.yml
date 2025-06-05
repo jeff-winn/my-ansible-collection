@@ -20,7 +20,7 @@
         state: down
 
 - name: Cleanup
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   tasks:
